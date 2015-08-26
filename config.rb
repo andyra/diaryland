@@ -7,7 +7,7 @@ require 'neat'
 # Settings
 # -----------------------------------------------------------------------------
 
-set :site_title, 'Diary Land'
+set :site_title, 'Diaryland'
 set :site_url, ''
 set :site_description, ''
 set :site_keywords, ''
