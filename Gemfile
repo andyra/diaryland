@@ -12,11 +12,7 @@ gem "builder", "~> 3.0"
 gem "bourbon"
 gem "neat"
 gem "middleman-autoprefixer"
+gem "middleman-gh-pages"
 gem "middleman-livereload"
-
-# Markup
 gem "middleman-minify-html"
 gem "slim"
-
-# Deploy
-gem "middleman-deploy"

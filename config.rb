@@ -102,6 +102,7 @@ helpers do
     "  <use xlink:href='/assets/images/sprite.min.svg##{id}'></use>" +
     "</svg>"
   end
+
 end
 
 # Development config
