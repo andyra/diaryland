@@ -1,0 +1,11 @@
+// ============================================================================
+// Absolute Unit
+// ============================================================================
+
+// Returns true if a number has an absolute unit.
+// @source: http://compass-style.org/reference/compass/typography/vertical_rhythm/#function-absolute-unit
+// @version: 0.12.2
+
+@function absolute-unit($number) {
+  @return not (relative-unit($number) or unitless($number));
+}

@@ -1,17 +1,17 @@
 # Required Gems
 # -----------------------------------------------------------------------------
 
-require 'bourbon'
-require 'neat'
+require "bourbon"
+require "neat"
 
 # Settings
 # -----------------------------------------------------------------------------
 
-set :site_title, 'Diaryland'
-set :site_url, ''
-set :site_description, ''
-set :site_keywords, ''
-set :site_language, 'en-us'
+set :site_title, "Diaryland"
+set :site_url, ""
+set :site_description, ""
+set :site_keywords, ""
+set :site_language, "en-us"
 
 # Remove .html extension from pages
 activate :directory_indexes
@@ -23,17 +23,17 @@ activate :directory_indexes
 # -----------------------------------------------------------------------------
 
 # Set asset directories
-set :css_dir,     'assets/stylesheets'
-set :js_dir,      'assets/javascripts'
-set :images_dir,  'assets/images'
-set :fonts_dir,   'assets/fonts'
+set :css_dir,     "assets/stylesheets"
+set :js_dir,      "assets/javascripts"
+set :images_dir,  "assets/images"
+set :fonts_dir,   "assets/fonts"
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
 # Autoprefixer
 activate :autoprefixer do
-  config.browsers = ['last 2 versions', 'Explorer >= 10']
+  config.browsers = ["last 2 versions", "Explorer >= 10"]
   config.cascade  = false
 end
 
@@ -46,11 +46,11 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.permalink = "{title}.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "blog"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
@@ -58,12 +58,12 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  # blog.tag_template = "tag.html"
+  # blog.calendar_template = "calendar.html"
 
   # Enable pagination
-  # blog.paginate = true
-  # blog.per_page = 10
+  # blog.paginate = false
+  # blog.per_page = 1
   # blog.page_link = "page/{num}"
 end
 
@@ -73,7 +73,6 @@ page "/feed.xml", layout: false
 # -----------------------------------------------------------------------------
 
 helpers do
-
   # Add active class to nav <%= nav_link_to 'Home', '/index.html' %>
   def nav_link_to(link, url, options = {})
     current_url = current_resource.url
@@ -86,7 +85,7 @@ helpers do
 
   # Turn a string into a slug
   def slugify(string)
-    string.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+    string.downcase.strip.tr(" ", "-").gsub(/[^\w-]/, "")
   end
 
   # Put this method in your helper file to render inline SVG
@@ -99,10 +98,9 @@ helpers do
   # Shortcut for inserting an SVG image from the master sprite
   def sprite(id, width, height)
     "<svg viewBox='0 0 #{width} #{height}' class='icon #{id}'>" +
-    "  <use xlink:href='/assets/images/sprite.min.svg##{id}'></use>" +
-    "</svg>"
+      "  <use xlink:href='/assets/images/sprite.min.svg##{id}'></use>" +
+      "</svg>"
   end
-
 end
 
 # Development config

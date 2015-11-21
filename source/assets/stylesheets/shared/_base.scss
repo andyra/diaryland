@@ -1,0 +1,47 @@
+// ============================================================================
+// Base
+// ============================================================================
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0); // disable mobile Safari tap highlight
+  font-size: u(14px, "%");
+  min-height: 100%;
+  overflow-y: scroll;
+
+  // Base font size on small screens & up
+  @include media($screen-sm) {
+    font-size: u($font-size-root, "%");
+  }
+}
+
+body {
+  @include font-smoothing();
+  background-color: $white;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  hyphens: auto;
+  line-height: $line-height-base;
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  padding: 0 1rem;
+
+  &:before,
+  &:after {
+    background: url("../images/border-terrazzo.png") repeat-x;
+    content: "";
+    height: 15px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &:before { top: 0; }
+  &:after  { bottom: 0; }
+}

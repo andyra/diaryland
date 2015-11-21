@@ -1,0 +1,141 @@
+// ============================================================================
+// Typography
+// ============================================================================
+
+// Fonts
+// ----------------------------------------------------------------------------
+
+@include font-face("Procopius", "../fonts/procopius", normal, italic, $file-formats: ttf woff woff2);
+
+// Headings
+// ----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  font-family: $font-family-headings;
+  font-feature-settings: "dlig", "liga", "lnum", "kern";
+  font-weight: $font-weight-normal;
+  line-height: 1.2;
+  margin: 0 0 $spacer;
+  text-rendering: optimizeLegibility;
+}
+
+h1 { font-size: $font-size-xxl; }
+h2 { font-size: $font-size-xl; }
+h3 { font-size: $font-size-lg; }
+h4 { font-size: $font-size-md; }
+h5 { font-size: $font-size-base; }
+h6 { font-size: $font-size-sm; }
+
+// Paragraphs
+// ----------------------------------------------------------------------------
+
+p {
+  font-feature-settings: "kern", "onum", "liga";
+  margin: 0 0 $spacer;
+}
+
+// Links
+// ----------------------------------------------------------------------------
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+// Lists
+// ----------------------------------------------------------------------------
+
+// Ordered and Unordered lists
+ul, ol {
+  margin: 0 0 $spacer;
+
+  ul, ol {
+    margin-bottom: 0;
+  }
+}
+
+// Quotes
+// ----------------------------------------------------------------------------
+
+blockquote {
+  font-size: $font-size-md;
+  border-left: $border-width-lg solid;
+  padding-left: 2rem;
+  quotes: "\201C" "\201D";
+
+  > *:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
+  &:before { content: open-quote; }
+  &:after  { content: close-quote; }
+}
+
+// Inline elements
+// ----------------------------------------------------------------------------
+
+strong {
+  @extend %uppercase;
+  font-size: $font-size-sm;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: 85%;
+}
+
+.dagger {
+  color: tomato;
+  font-family: monospace;
+}
+
+// Citations
+cite {
+  font-size: $font-size-base;
+  font-style: normal;
+  display: block;
+  text-indent: 0;
+
+  &:before {
+    content: "\2014 \00A0"; // mdash + nbsp
+  }
+}
+
+// Abbreviations
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+
+  &[title]:hover,
+  &[data-original-title]:hover {
+    cursor: help;
+    border-bottom: 1px dotted $link-color;
+  }
+}
+
+%uppercase {
+  font-family: $font-family-mono;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

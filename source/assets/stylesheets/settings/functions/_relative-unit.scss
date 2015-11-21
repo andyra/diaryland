@@ -1,0 +1,11 @@
+// ============================================================================
+// Relative Unit
+// ============================================================================
+
+// Returns true if a number has a relative unit.
+// @source: http://compass-style.org/reference/compass/typography/vertical_rhythm/#function-relative-unit
+// @version: 0.12.2
+
+@function relative-unit($number) {
+  @return unit($number) == "%" or unit($number) == "em" or unit($number) == "rem";
+}

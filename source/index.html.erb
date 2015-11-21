@@ -1,24 +1,23 @@
----
-pageable: true
-per_page: 10
----
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+<% blog.articles[0...1].each do |article| %>
+  <article class="page">
+    <time class="page__date"><%= article.date.strftime('%b %e') %></time>
+    <h2 class="page__title"><%= article.title %></h2>
+    <%= article.body %>
+  </article>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
+  <% prev_article = article.previous_article %>
+  <% if prev_article %>
+    <a href="<%= prev_article.url %>" rel="prev" title="<%= prev_article.title %>">
+      <%= prev_article.title %>
+      ←
+    </a>
   <% end %>
-<% end %>
 
-<% page_articles.each_with_index do |article, i| %>
-  <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-  <!-- use article.summary(250) if you have Nokogiri available to show just
-       the first 250 characters -->
-  <%= article.body %>
-<% end %>
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
+  <% next_article = article.next_article %>
+  <% if next_article %>
+    <a href="<%= next_article.url %>" rel="next" title="<%= next_article.title %>">
+      <%= next_article.title %>
+      →
+    </a>
   <% end %>
 <% end %>

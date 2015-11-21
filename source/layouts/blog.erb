@@ -1,0 +1,20 @@
+<% wrap_layout :layout do %>
+  <article class="page">
+    <time class="page__date"><%= current_article.date.strftime('%b %e') %></time>
+    <h2 class="page__title"><%= current_article.title %></h2>
+    <hr class="filigree">
+    <%= current_article.body %>
+  </article>
+
+  <nav class="diary-nav">
+    <% prev_article = current_article.previous_article %>
+    <% if prev_article %>
+      <a class="diary-nav__arrow diary-nav__arrow--prev" href="<%= prev_article.url %>" rel="prev" title="<%= prev_article.title %>">←</a>
+    <% end %>
+    <span class="dagger">◆</span>
+    <% next_article = current_article.next_article %>
+    <% if next_article %>
+      <a class="diary-nav__arrow diary-nav__arrow--next" href="<%= next_article.url %>" rel="next" title="<%= next_article.title %>">→</a>
+    <% end %>
+  </nav>
+<% end %>

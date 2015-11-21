@@ -1,0 +1,18 @@
+// ============================================================================
+// Link color
+// ============================================================================
+
+@mixin link-color($color, $hover-color, $bg-color: false, $bg-hover-color: false) {
+  color: $color;
+  @if $bg-color {
+    background-color: $bg-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $hover-color;
+    @if $bg-hover-color {
+      background-color: $bg-hover-color;
+    }
+  }
+}
