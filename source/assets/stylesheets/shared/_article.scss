@@ -1,0 +1,40 @@
+// ============================================================================
+// Article
+// ============================================================================
+
+.article {
+  @include outer-container;
+  padding-top: $spacer * 2;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.article__date {
+  @extend %uppercase;
+  display: block;
+  font-size: $font-size-sm;
+  text-align: center;
+}
+
+.article__title {
+  text-align: center;
+  margin: 0;
+}
+
+.article__dagger {
+  color: tomato;
+  display: block;
+  font-family: monospace;
+  text-align: center;
+}
+
+.image--sm {
+  max-width: 120px;
+}
+
+.pull-right {
+  float: right;
+}

@@ -45,7 +45,7 @@ a {
   &:hover,
   &:focus {
     color: $link-hover-color;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   &:focus {
@@ -103,11 +103,6 @@ em {
 
 small {
   font-size: 85%;
-}
-
-.dagger {
-  color: tomato;
-  font-family: monospace;
 }
 
 // Citations

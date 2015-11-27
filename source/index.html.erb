@@ -1,23 +1,4 @@
 <% blog.articles[0...1].each do |article| %>
-  <article class="page">
-    <time class="page__date"><%= article.date.strftime('%b %e') %></time>
-    <h2 class="page__title"><%= article.title %></h2>
-    <%= article.body %>
-  </article>
-
-  <% prev_article = article.previous_article %>
-  <% if prev_article %>
-    <a href="<%= prev_article.url %>" rel="prev" title="<%= prev_article.title %>">
-      <%= prev_article.title %>
-      ←
-    </a>
-  <% end %>
-
-  <% next_article = article.next_article %>
-  <% if next_article %>
-    <a href="<%= next_article.url %>" rel="next" title="<%= next_article.title %>">
-      <%= next_article.title %>
-      →
-    </a>
-  <% end %>
+  <%= partial "partials/article", :locals => { :article => article } %>
+  <%= partial "partials/nav", :locals => { :article => article } %>
 <% end %>

@@ -22,7 +22,7 @@ html {
 
 body {
   @include font-smoothing();
-  background-color: $white;
+  background-color: $bg-color;
   color: $text-color;
   font-family: $font-family-base;
   font-size: $font-size-base;
@@ -32,16 +32,16 @@ body {
   font-weight: $font-weight-normal;
   padding: 0 1rem;
 
-  &:before,
-  &:after {
-    background: url("../images/border-terrazzo.png") repeat-x;
-    content: "";
-    height: 15px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
+  // &:before,
+  // &:after {
+  //   background: url("../images/border-terrazzo.png") repeat-x;
+  //   content: "";
+  //   height: 15px;
+  //   left: 0;
+  //   position: absolute;
+  //   width: 100%;
+  // }
 
-  &:before { top: 0; }
-  &:after  { bottom: 0; }
+  // &:before { top: 0; }
+  // &:after  { bottom: 0; }
 }

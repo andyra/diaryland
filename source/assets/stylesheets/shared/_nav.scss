@@ -1,0 +1,27 @@
+// ============================================================================
+// Nav
+// ============================================================================
+
+.nav {
+  padding: ($spacer * 2) 0;
+  text-align: center;
+}
+
+.nav__item {
+  @include link-color($black, tomato);
+  display: inline-table;
+
+  + .nav__item {
+    margin-left: 1rem;
+  }
+}
+
+.nav__item--arrow {
+  font-size: $font-size-lg;
+}
+
+.nav__item--more {
+  @extend %uppercase;
+  font-size: $font-size-sm;
+  font-family: $font-family-mono;
+}
