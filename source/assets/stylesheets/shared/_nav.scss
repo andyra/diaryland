@@ -8,7 +8,7 @@
 }
 
 .nav__item {
-  @include link-color($black, tomato);
+  @include link-color($black, $red);
   display: inline-table;
 
   + .nav__item {

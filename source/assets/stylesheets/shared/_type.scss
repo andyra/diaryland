@@ -31,8 +31,7 @@ h6 { font-size: $font-size-sm; }
 // ----------------------------------------------------------------------------
 
 p {
-  font-feature-settings: "kern", "onum", "liga";
-  margin: 0 0 $spacer;
+  margin: 0 0 1rem;
 }
 
 // Links
@@ -56,12 +55,26 @@ a {
 // Lists
 // ----------------------------------------------------------------------------
 
-// Ordered and Unordered lists
-ul, ol {
-  margin: 0 0 $spacer;
+.list--plain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  ul, ol {
-    margin-bottom: 0;
+.list--pretty {
+  display: table;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    display: table-row;
+
+    &:before {
+      content: "•";
+      display: table-cell;
+      padding-right: 0.5rem;
+    }
   }
 }
 

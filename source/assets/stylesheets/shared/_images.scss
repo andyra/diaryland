@@ -1,0 +1,22 @@
+// ============================================================================
+// Images
+// ============================================================================
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+.image--right {
+  float: right;
+  margin-left: $spacer;
+}
+
+.image--left {
+  float: left;
+  margin-right: $spacer;
+}
+
+.image--sm {
+  width: 8rem;
+}

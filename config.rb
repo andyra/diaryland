@@ -16,6 +16,9 @@ set :site_language, "en-us"
 # Remove .html extension from pages
 activate :directory_indexes
 
+# Markdown engine
+set :markdown, :smartypants => true
+
 # Relative links
 # set :relative_links, true
 

@@ -5,11 +5,6 @@
 .article {
   @include outer-container;
   padding-top: $spacer * 2;
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 .article__date {
@@ -25,16 +20,44 @@
 }
 
 .article__dagger {
-  color: tomato;
+  color: $red;
   display: block;
   font-family: monospace;
   text-align: center;
 }
 
-.image--sm {
-  max-width: 120px;
+body.all {
+  background: $olive;
 }
 
-.pull-right {
-  float: right;
+.more-list {
+  @extend %uppercase;
+  font-size: $font-size-sm;
+  margin: 0 auto;
+  text-align: center;
+
+  li {
+    display: inline-block;
+
+    + li {
+      &:before {
+        content: "◆";
+        color: $red;
+        display: inline-block;
+        margin: 0 1rem;
+        font-family: monospace;
+        font-style: normal;
+      }
+    }
+  }
+
+  a {
+    @include link-color($pale-blue, $red);
+  }
+
+  strong {
+    display: inline-block;
+    font-style: normal;
+    margin-right: 0.5rem;
+  }
 }

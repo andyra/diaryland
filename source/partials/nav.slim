@@ -1,0 +1,8 @@
+nav.nav
+  - prev_article = article.previous_article
+  - next_article = article.next_article
+  - if prev_article
+    = link_to "←", prev_article.url, class: "nav__item nav__item--arrow nav__item--prev", rel: "prev"
+  = link_to "More", "/all", class: "nav__item nav__item--more"
+  - if next_article
+    = link_to "→", next_article.url, class: "nav__item nav__item--arrow nav__item--next", rel: "next"

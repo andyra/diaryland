@@ -15,6 +15,7 @@ $gray-lighter:          hsl(0, 0%,  91%);
 $gray-lightest:         hsl(0, 0%,  96%);
 $white:                 hsl(0, 0%, 100%);
 
+$red:                   hsl(9, 100%, 64%);
 $olive:                 hsl(44, 29%, 23%);
 $pale-blue:             hsl(180, 23%, 76%);
 
@@ -23,7 +24,7 @@ $pale-blue:             hsl(180, 23%, 76%);
 
 // Families
 $font-family-sans:      $helvetica;
-$font-family-serif:     "Source Serif Pro", "Times New Roman", times, $georgia;
+$font-family-serif:     "Times New Roman", times, $georgia;
 $font-family-script:    "Procopius", arial;
 $font-family-mono:      "Source Code Pro", $monospace;
 
@@ -55,11 +56,11 @@ $font-weight-bold:      700;
 $font-weight-black:     900;
 
 // Colors
-$bg-color:              $olive;
-$text-color:            $pale-blue;
+$bg-color:              $white;
+$text-color:            $black;
 $text-muted-color:      $gray-light;
 
-$link-color:            gold;
+$link-color:            $red;
 $link-hover-color:      darken($link-color, 15%);
 
 // Breakpoints

@@ -9,8 +9,8 @@
   text-align: center;
 
   a {
-    @include link-color(black, tomato);
-    background: white;
+    @include link-color($black, $red);
+    background: $white;
     display: inline-block;
     padding: 0 0.5rem;
     font-family: $font-family-mono;

@@ -1,0 +1,3 @@
+- blog.articles[0...1].each do |article|
+  = partial "partials/article", :locals => { :article => article }
+  = partial "partials/nav", :locals => { :article => article }
