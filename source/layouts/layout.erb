@@ -5,15 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <title><%= site_title %></title>
+  <title><%= yield_content :site_title %></title>
   <link rel="stylesheet" href="assets/stylesheets/diaryland.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:600" rel="stylesheet" type="text/css">
 </head>
-
 <body class="<%= page_classes %>">
-  <header class="header">
-    <a href="/">Diaryland</a>
-  </header>
   <main class="diary" role="main">
     <%= yield %>
   </main>

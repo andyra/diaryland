@@ -1,6 +1,9 @@
-= image_tag "diaryland-binder.png", class: "more-logo"
+= link_to '/' do
+  = image_tag "diary/diaryland-binder.png", class: "more-logo"
 
 ul.more-list.list--plain
   - blog.articles.each do |article|
-    - text = [article.date.strftime("%Y %b %e"), article.title].join(" ")
-    li= link_to text, article.url
+    li
+      = link_to article.url do
+        time= article.date.strftime("%Y %b %e")
+        = article.title

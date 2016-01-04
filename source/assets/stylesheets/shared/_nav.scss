@@ -3,25 +3,45 @@
 // ============================================================================
 
 .nav {
-  padding: ($spacer * 2) 0;
   text-align: center;
+  width: 100%;
 }
 
 .nav__item {
-  @include link-color($black, $red);
   display: inline-table;
+  line-height: $spacer * 2;
+  padding: 0 1rem;
 
   + .nav__item {
     margin-left: 1rem;
   }
 }
 
-.nav__item--arrow {
-  font-size: $font-size-lg;
+.nav__item--disabled {
+  cursor: default;
+  opacity: 0.25;
 }
 
-.nav__item--more {
+.nav__item--prev,
+.nav__item--next {
   @extend %uppercase;
-  font-size: $font-size-sm;
+  color: $black;
   font-family: $font-family-mono;
+  font-size: $font-size-sm;
+}
+
+.nav__item--arrow {
+  font-size: $font-size-lg;
+  font-family: $font-family-sans;
+  line-height: 1;
+}
+
+.nav__item--prev {
+  float: right;
+  margin-right: -1rem;
+}
+
+.nav__item--next {
+  float: left;
+  margin-left: -1rem;
 }

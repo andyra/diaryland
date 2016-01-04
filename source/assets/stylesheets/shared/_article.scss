@@ -3,8 +3,12 @@
 // ============================================================================
 
 .article {
-  @include outer-container;
+  @include outer-container();
   padding-top: $spacer * 2;
+
+  @include media($screen-sm-up) {
+    text-align: justify;
+  }
 }
 
 .article__date {
@@ -26,38 +30,68 @@
   text-align: center;
 }
 
+// All Articles
+// ----------------------------------------------------------------------------
+
 body.all {
   background: $olive;
 }
 
+.more-logo {
+  margin: $spacer auto;
+}
+
 .more-list {
-  @extend %uppercase;
-  font-size: $font-size-sm;
-  margin: 0 auto;
-  text-align: center;
-
-  li {
+  li:before {
+    content: "◆";
+    color: $red;
     display: inline-block;
-
-    + li {
-      &:before {
-        content: "◆";
-        color: $red;
-        display: inline-block;
-        margin: 0 1rem;
-        font-family: monospace;
-        font-style: normal;
-      }
-    }
+    padding-right: 1rem;
+    font-family: monospace;
+    font-style: normal;
   }
 
   a {
     @include link-color($pale-blue, $red);
+    display: inline-block;
+    font-style: italic;
+    line-height: $spacer;
   }
 
-  strong {
-    display: inline-block;
+  time {
+    @extend %uppercase;
+    display: inline-table;
+    font-size: $font-size-sm;
     font-style: normal;
     margin-right: 0.5rem;
+  }
+}
+
+@include media($screen-md-up) {
+  .more-list {
+    text-align: center;
+
+    li {
+      display: inline-table;
+    }
+
+    li:before {
+      padding-left: 1rem;
+    }
+  }
+}
+
+@include media($screen-md-down) {
+  .more-list {
+    display: table;
+
+    li {
+      display: table-row;
+    }
+
+    a,
+    li:before {
+      display: table-cell;
+    }
   }
 }

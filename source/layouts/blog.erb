@@ -1,4 +1,5 @@
 <% wrap_layout :layout do %>
-  <%= partial "partials/article", :locals => { :article => current_article } %>
+  <% content_for(:site_title) { diary_title(current_article.title) } %>
   <%= partial "partials/nav", :locals => { :article => current_article } %>
+  <%= partial "partials/article", :locals => { :article => current_article } %>
 <% end %>

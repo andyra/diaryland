@@ -1,8 +1,20 @@
 nav.nav
   - prev_article = article.previous_article
   - next_article = article.next_article
-  - if prev_article
-    = link_to "←", prev_article.url, class: "nav__item nav__item--arrow nav__item--prev", rel: "prev"
-  = link_to "More", "/all", class: "nav__item nav__item--more"
   - if next_article
-    = link_to "→", next_article.url, class: "nav__item nav__item--arrow nav__item--next", rel: "next"
+    = link_to next_article.url, class: "nav__item nav__item--next", rel: "next" do
+      span.nav__item--arrow ←
+      |  Newer
+  - else
+    span.nav__item.nav__item--next.nav__item--disabled
+      span.nav__item--arrow ←
+      |  Newer
+  = link_to "Diaryland", "/all", class: "nav__item nav__item--home"
+  - if prev_article
+    = link_to prev_article.url, class: "nav__item nav__item--prev", rel: "prev" do
+      | Older
+      span.nav__item--arrow  →
+  - else
+    span.nav__item.nav__item--prev.nav__item--disabled
+      | Older
+      span.nav__item--arrow  →

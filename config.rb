@@ -104,6 +104,24 @@ helpers do
       "  <use xlink:href='/assets/images/sprite.min.svg##{id}'></use>" +
       "</svg>"
   end
+
+  def diary_title(article_title)
+    title = ""
+    unless article_title.nil? || article_title.empty?
+      title << article_title + " | "
+    end
+    title << "Diaryland"
+  end
+
+  def figure(image, classes, caption="")
+    tag = "<figure class='figure #{classes}'>"
+    # tag << "  <img class='figure__image' src='/assets/images/diary/#{image}' alt='#{caption}'>"
+    tag << image_tag(image, class: "figure__image")
+    unless caption.nil? || caption.empty?
+      tag << "  <figcaption class='figure__caption'>#{caption}</figcaption>"
+    end
+    tag << "</figure>"
+  end
 end
 
 # Development config

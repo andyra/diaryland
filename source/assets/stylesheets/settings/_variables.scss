@@ -35,17 +35,17 @@ $font-family-headings:  $font-family-script;
 // @source: http://modularscale.com/
 $ratio:                 $major-third;
 
-$font-size-xxl:         modular-scale(4, $font-size-root, $ratio);
-$font-size-xl:          modular-scale(3, $font-size-root, $ratio);
-$font-size-lg:          modular-scale(2, $font-size-root, $ratio);
-$font-size-md:          modular-scale(1, $font-size-root, $ratio);
-$font-size-base:        modular-scale(0, $font-size-root, $ratio);
-$font-size-sm:          modular-scale(-1, $font-size-root, $ratio);
-$font-size-xs:          modular-scale(-2, $font-size-root, $ratio);
+$font-size-xxl:         modular-scale(4, 1rem, $ratio);
+$font-size-xl:          modular-scale(3, 1rem, $ratio);
+$font-size-lg:          modular-scale(2, 1rem, $ratio);
+$font-size-md:          modular-scale(1, 1rem, $ratio);
+$font-size-base:        modular-scale(0, 1rem, $ratio);
+$font-size-sm:          modular-scale(-1, 1rem, $ratio);
+$font-size-xs:          modular-scale(-2, 1rem, $ratio);
 
 // Line height
 $line-height-base:      1.5;
-$spacer:          $font-size-base * $line-height-base;
+$spacer:                $font-size-base * $line-height-base;
 
 // Weights
 $font-weight-thin:      100;
@@ -87,10 +87,10 @@ $screen-xl-down:        new-breakpoint(max-width $screen-xl);
 // Grid
 // ----------------------------------------------------------------------------
 
-$max-width:                 700px;
-$grid-columns:              12;
-$column:                    golden-ratio(1%, 3);
-$gutter:                    golden-ratio(1%, 1);
+$max-width:             $screen-md;
+$grid-columns:          12;
+$column:                golden-ratio(1%, 3);
+$gutter:                golden-ratio(1%, 1);
 
 // Components
 // ----------------------------------------------------------------------------

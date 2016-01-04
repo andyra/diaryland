@@ -2,21 +2,49 @@
 // Images
 // ============================================================================
 
-.image {
-  max-width: 100%;
+img {
+  display: block;
   height: auto;
+  max-width: 100%;
 }
 
-.image--right {
-  float: right;
-  margin-left: $spacer;
+// Base
+// ----------------------------------------------------------------------------
+
+.figure {
+  margin: 0;
+  max-width: 14rem;
+
+  @include media($screen-sm-up) {
+    margin-top: 0.35rem; // align with top of paragraph
+  }
+
+  @include media($screen-sm-down) {
+    margin: $spacer auto;
+    text-align: center;
+    max-width: 24rem;
+  }
 }
 
-.image--left {
-  float: left;
-  margin-right: $spacer;
+.figure__caption {
+  font-size: $font-size-xs;
+  font-family: $font-family-sans;
 }
 
-.image--sm {
-  width: 8rem;
+// Layout
+// ----------------------------------------------------------------------------
+
+@include media($screen-sm-up) {
+  .figure--left {
+    float: left;
+    margin-right: 1rem;
+    max-width: 14rem;
+  }
+
+  .figure--right {
+    float: right;
+    margin-left: 1rem;
+    max-width: 14rem;
+  }
 }
+

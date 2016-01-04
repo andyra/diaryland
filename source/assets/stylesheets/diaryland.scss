@@ -19,7 +19,8 @@
 // Author:     Andy Smith
 // Source:     http://github/com/andyra/diaryland
 
-$font-size-root: 18px;
+$font-size-root:  19px;
+$em-base:         $font-size-root;
 
 // Libraries
 @import "bourbon";
