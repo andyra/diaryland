@@ -6,14 +6,12 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <title><%= yield_content :site_title %></title>
-  <link rel="stylesheet" href="assets/stylesheets/diaryland.css">
+  <%= stylesheet_link_tag "diaryland" %>
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:600" rel="stylesheet" type="text/css">
 </head>
 <body class="<%= page_classes %>">
   <main class="diary" role="main">
     <%= yield %>
   </main>
-  <footer class="footer">
-  </footer>
 </body>
 </html>

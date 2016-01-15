@@ -9,7 +9,8 @@ nav.nav
     span.nav__item.nav__item--next.nav__item--disabled
       span.nav__item--arrow ←
       |  Newer
-  = link_to "Diaryland", "/all", class: "nav__item nav__item--home"
+  = link_to "Diaryland", "all.html", class: "nav__item nav__item--home"
+
   - if prev_article
     = link_to prev_article.url, class: "nav__item nav__item--prev", rel: "prev" do
       | Older

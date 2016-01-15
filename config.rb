@@ -3,6 +3,7 @@
 
 require "bourbon"
 require "neat"
+Slim::Engine.disable_option_validator!
 
 # Settings
 # -----------------------------------------------------------------------------
@@ -13,14 +14,14 @@ set :site_description, ""
 set :site_keywords, ""
 set :site_language, "en-us"
 
-# Remove .html extension from pages
+# set :relative_links, true
+# activate :relative_assets   # Relative URLs
 activate :directory_indexes
+activate :asset_hash        # Enable cache buster
+set :trailing_slash, true
 
 # Markdown engine
 set :markdown, :smartypants => true
-
-# Relative links
-# set :relative_links, true
 
 # Assets
 # -----------------------------------------------------------------------------
@@ -40,34 +41,38 @@ activate :autoprefixer do
   config.cascade  = false
 end
 
+# Development config
+# -----------------------------------------------------------------------------
+
+configure :development do
+  activate :livereload
+end
+
+# Build config
+# -----------------------------------------------------------------------------
+
+configure :build do
+  set :http_prefix, "/diaryland"
+  activate :minify_html       # Shrink HTML files
+  activate :minify_css        # shrink CSS files
+end
+
+# Deploy config
+# -----------------------------------------------------------------------------
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true
+end
+
 # Blog Settings
 # -----------------------------------------------------------------------------
 
 # Time.zone = "UTC"
 
 activate :blog do |blog|
-  # This will add a prefix to all links, template references and source paths
-  # blog.prefix = "blog"
-
-  blog.permalink = "{title}.html"
-  # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
-  # blog.taglink = "tags/{tag}.html"
+  blog.permalink = "{title}/index.html"
   blog.layout = "blog"
-  # blog.summary_separator = /(READMORE)/
-  # blog.summary_length = 250
-  # blog.year_link = "{year}.html"
-  # blog.month_link = "{year}/{month}.html"
-  # blog.day_link = "{year}/{month}/{day}.html"
-  # blog.default_extension = ".markdown"
-
-  # blog.tag_template = "tag.html"
-  # blog.calendar_template = "calendar.html"
-
-  # Enable pagination
-  # blog.paginate = false
-  # blog.per_page = 1
-  # blog.page_link = "page/{num}"
 end
 
 page "/feed.xml", layout: false
@@ -122,21 +127,4 @@ helpers do
     end
     tag << "</figure>"
   end
-end
-
-# Development config
-# -----------------------------------------------------------------------------
-
-configure :development do
-  activate :livereload
-end
-
-# Build config
-# -----------------------------------------------------------------------------
-
-configure :build do
-  activate :relative_assets   # Relative URLs
-  activate :directory_indexes # Pretty URLs
-  activate :asset_hash        # Enable cache buster
-  activate :minify_html       # Shrink HTML files
 end
