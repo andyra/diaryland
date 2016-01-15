@@ -16,9 +16,7 @@ set :site_language, "en-us"
 
 # set :relative_links, true
 # activate :relative_assets   # Relative URLs
-activate :directory_indexes
 activate :asset_hash        # Enable cache buster
-set :trailing_slash, true
 
 # Markdown engine
 set :markdown, :smartypants => true
@@ -54,7 +52,9 @@ end
 configure :build do
   set :http_prefix, "/diaryland"
   activate :minify_html       # Shrink HTML files
-  activate :minify_css        # shrink CSS files
+  activate :minify_css        # Shrink CSS files
+  activate :directory_indexes # Pretty URLs
+  set :trailing_slash, true
 end
 
 # Deploy config

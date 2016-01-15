@@ -24,6 +24,10 @@ img {
     text-align: center;
     max-width: 24rem;
   }
+
+  img {
+    width: 100%;
+  }
 }
 
 .figure__caption {
@@ -48,3 +52,7 @@ img {
   }
 }
 
+.figure--full {
+  margin: 0 0 $spacer;
+  max-width: 100%;
+}
