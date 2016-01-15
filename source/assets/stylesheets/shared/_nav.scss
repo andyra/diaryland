@@ -2,15 +2,24 @@
 // Nav
 // ============================================================================
 
+.go-home {
+  display: table;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 .nav {
+  display: table;
+  table-layout: fixed;
   text-align: center;
   width: 100%;
 }
 
 .nav__item {
-  display: inline-table;
+  display: table-cell;
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
   line-height: $spacer * 2;
-  padding: 0 1rem;
 
   + .nav__item {
     margin-left: 1rem;
@@ -26,8 +35,6 @@
 .nav__item--next {
   @extend %uppercase;
   color: $black;
-  font-family: $font-family-mono;
-  font-size: $font-size-sm;
 }
 
 .nav__item--arrow {
@@ -37,11 +44,9 @@
 }
 
 .nav__item--prev {
-  float: right;
-  margin-right: -1rem;
+  text-align: right;
 }
 
 .nav__item--next {
-  float: left;
-  margin-left: -1rem;
+  text-align: left;
 }
